@@ -18,12 +18,17 @@ const Debris = ({
   TLE_LINE1,
   TLE_LINE2,
 }) => {
-  return <li className="debris">
-    <h3>Name: {OBJECT_NAME}</h3>
-    <p>Period: {PERIOD}</p>
-    <p>Inclination: {INCLINATION}</p>
-    <p>Mean Motion: {MEAN_MOTION}</p>
-  </li>;
+  return (
+    <li className='debris'>
+      <h2>Name: {OBJECT_NAME}</h2>
+      <p>Period: {PERIOD}</p>
+      <p>Inclination: {INCLINATION}</p>
+      <p>Apogee: {APOGEE}</p>
+      <p>Perigee: {PERIGEE}</p>
+      <p>Eccentricity: {ECCENTRICITY}</p>
+      <p>Mean Motion: {MEAN_MOTION}</p>
+    </li>
+  );
 };
 
 const DebrisList = () => {
@@ -55,7 +60,6 @@ const DebrisList = () => {
 const PositionalData = () => {
   return (
     <div>
-      <h2>Debris List</h2>
       <DebrisList />
     </div>
   );
