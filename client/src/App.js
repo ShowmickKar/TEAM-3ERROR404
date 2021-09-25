@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import PositionalData from "./components/PositionalData";
+import data from "./data/spaceObjects";
 
-function App() {
+const App = () => {
+  let debris = [];
+  for (var i = 0; i < data.length; i++) {
+    if (data[i]["OBJECT_TYPE"] === "DEBRIS") {
+      console.log("Debris Found");
+      debris.push(data[i]);
+    }
+  }
+  const json = JSON.stringify(debris);
+  console.log(json);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header>
+        <h1>Mapping Space Trash in Real Time</h1>
       </header>
+      <div className='container'>
+        <PositionalData></PositionalData>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
