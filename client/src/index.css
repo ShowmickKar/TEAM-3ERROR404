@@ -11,10 +11,13 @@
 .debris-list {
   padding: 10px;
   border: 1px solid black;
+  border-radius: 12px;
 }
 
 .debris {
   list-style-type: none;
   padding: 5px;
   border: 1px solid red;
+  border-radius: 12px;
+  margin: 5px;
 }
