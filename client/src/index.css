@@ -7,3 +7,14 @@
 .App {
   text-align: center;
 } 
+
+.debris-list {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.debris {
+  list-style-type: none;
+  padding: 5px;
+  border: 1px solid red;
+}

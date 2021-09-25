@@ -5,33 +5,58 @@
 
 import React from "react";
 
-// Sample attributes for one object
-const sampleData = {
-  OBJECT_ID: "1959-001A",
-  OBJECT_NAME: "VANGUARD 2",
-  NORAD_CAT_ID: "11",
-  OBJECT_TYPE: "PAYLOAD",
-  PERIOD: "121.487",
-  INCLINATION: "32.8725",
-  APOGEE: "2940.509",
-  PERIGEE: "554.137",
-  ECCENTRICITY: "0.1468454",
-  MEAN_MOTION: "11.85307269",
-  TLE_LINE1:
-    "1    11U 59001A   16238.87762969 +.00000360 +00000-0 +18250-3 0  9999",
-  TLE_LINE2:
-    "2    11 032.8725 238.6809 1468454 317.6718 031.9228 11.85307269109784",
-  LAUNCH_DATE: "1959-02-17",
-  LAUNCH_SITE: "AIR FORCE EASTERN TEST RANGE",
-  OWNER: "UNITED STATES OF AMERICA",
-  ORBIT_TYPE: "Low Earth Orbit",
-  OPERATIONAL_STATUS: "Unknown",
+const Debris = ({
+  OBJECT_NAME,
+  NORAD_CAT_ID,
+  OBJECT_TYPE,
+  PERIOD,
+  INCLINATION,
+  APOGEE,
+  PERIGEE,
+  ECCENTRICITY,
+  MEAN_MOTION,
+  TLE_LINE1,
+  TLE_LINE2,
+}) => {
+  return <li className="debris">
+    <h3>Name: {OBJECT_NAME}</h3>
+    <p>Period: {PERIOD}</p>
+    <p>Inclination: {INCLINATION}</p>
+    <p>Mean Motion: {MEAN_MOTION}</p>
+  </li>;
+};
+
+const DebrisList = () => {
+  var data = require("../data/data.json");
+
+  return (
+    <ul className='debris-list'>
+      {data.map((debris) => {
+        return (
+          <Debris
+            key={debris["OBJECT_ID"]}
+            OBJECT_NAME={debris["OBJECT_NAME"]}
+            NORAD_CAT_ID={debris["NORAD_CAT_ID"]}
+            OBJECT_TYPE={debris["OBJECT_TYPE"]}
+            PERIOD={debris["PERIOD"]}
+            INCLINATION={debris["INCLINATION"]}
+            APOGEE={debris["APOGEE"]}
+            PERIGEE={debris["PERIGEE"]}
+            ECCENTRICITY={debris["ECCENTRICITY"]}
+            MEAN_MOTION={debris["MEAN_MOTION"]}
+            TLE_LINE1={debris["TLE_LINE1"]}
+            TLE_LINE2={debris["TLE_LINE2"]}></Debris>
+        );
+      })}
+    </ul>
+  );
 };
 
 const PositionalData = () => {
   return (
     <div>
-      positional data
+      <h2>Debris List</h2>
+      <DebrisList />
     </div>
   );
 };
