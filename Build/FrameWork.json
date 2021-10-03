@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "GlobeTest",
+"productVersion": "0.1",
+"dataUrl": "FrameWork.data.unityweb",
+"wasmCodeUrl": "FrameWork.wasm.code.unityweb",
+"wasmFrameworkUrl": "FrameWork.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": true,
+"multithreading": false,
+"unityVersion": "2019.4.13f1"
+}
